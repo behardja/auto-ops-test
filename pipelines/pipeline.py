@@ -76,6 +76,8 @@ def create_training_pipeline(pipeline_job_spec_path: str):
             y_test_dataset=transformation.outputs["y_test_dataset"],
         ).after(transformation).set_display_name("Model Training")
 
+        # ADD A NEW COMPONENT THAT DOES TRANSOFRMATIONS
+        
         model_registry = model_registry_op(
             project=PROJECT_ID,
             location=LOCATION,
